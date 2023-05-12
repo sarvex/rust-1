@@ -23,7 +23,7 @@ small = tf.image.resize(img[:, 100:-100], (224, 224), antialias=True)
 # dump the content to use from Rust later
 small = tf.cast(small, tf.uint8)
 buf = tf.image.encode_png(small)
-tf.io.write_file(directory + "/sample.png", buf)
+tf.io.write_file(f"{directory}/sample.png", buf)
 
 # check model prediction
 predict = model(small[tf.newaxis, :, :, :])

@@ -10,8 +10,7 @@ class LinearRegresstion(tf.Module):
 
     @tf.function
     def __call__(self, x):
-        y_hat = self.w * x + self.b
-        return y_hat
+        return self.w * x + self.b
 
     @tf.function
     def get_w(self):
